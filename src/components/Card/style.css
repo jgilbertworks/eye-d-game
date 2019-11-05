@@ -9,16 +9,16 @@
     box-shadow: -6px 6px 2px 1px rgba(0, 0, 55, .2);
     border-radius: 10px;
     border:1px solid lightgray;
-    transition: transform 1s ease;
+    transition: transform .5s ease;
     overflow:hidden;
     align-self: center;
     }
     
     .card-wrapper > img:hover {
-    -moz-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
+    -moz-transform: scale(1.025); 
+    -webkit-transform: scale(1.025);
+    -o-transform: scale(1.025);
+    -ms-transform: scale(1.025);
+    transform: scale(1.025);
     cursor: pointer;
     }
