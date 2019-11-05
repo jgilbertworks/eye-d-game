@@ -8,6 +8,7 @@ import cardsData from './cards.json';
 import './index.css';
 import Footer from './components/Footer/index';
 import Popup from './components/Popup';
+import WinPop from './components/WinPopUp';
 
 class App extends Component {
     constructor(props) {
@@ -17,7 +18,8 @@ class App extends Component {
             cards: [],
             score: 0,
             highscore: 0,
-            showPopup: false
+            showPopup: false,
+            showWinPopup: false
         }
 
     }
@@ -25,6 +27,11 @@ class App extends Component {
     togglePopup() {
         this.setState({
             showPopup: !this.state.showPopup
+        });
+    }
+    toggleWinPopup() {
+        this.setState({
+            showWinPopup: !this.state.showWinPopup
         });
     }
 
@@ -56,8 +63,10 @@ class App extends Component {
     victoryCheck = () => {
         let remainingCards = this.state.cards.filter(card => card.count === 0)
         if (remainingCards.length === 0) {
-            this.setState({ message: 'You Win' })
+            // this.setState({ message: 'You Win' })
+            this.toggleWinPopup()
             this.state.cards.forEach(card => card.count = 0)
+            this.setState({highscore: this.state.score + 1})
         }
     }
     clickCount = id => {
@@ -90,13 +99,23 @@ class App extends Component {
                 <div>
                     {this.state.showPopup ?
                         <Popup
-                            text='Too bad, you lost. Click "OK" to play again.'
+                            text='Too bad, you lost. Click "OK" to beat your top score.'
                             closePopup={this.togglePopup.bind(this)}
                             score={score}
                         />
                         : null
                     }
                 </div>
+                <div>
+                {this.state.showWinPopup ?
+                    <WinPop
+                        text='You Win! Click "OK" to beat your top score.'
+                        closeWinPopup={this.toggleWinPopup.bind(this)}
+                        score={score}
+                    />
+                    : null
+                }
+            </div>
                 <CardsWrapper>
                     {cards.map(card => (
                         <Card
