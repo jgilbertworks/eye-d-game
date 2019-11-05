@@ -49,7 +49,7 @@ class App extends Component {
             localStorage.setItem("memoryGame", storeData)
             this.setState({ highscore: this.state.score })
         }
-        this.setState({ message: 'Game Over!' })
+        // this.setState({ message: 'Game Over!' })
         this.state.cards.forEach(card => card.count = 0)
         this.setState({ score: 0 })
     }
