@@ -90,8 +90,9 @@ class App extends Component {
                 <div>
                     {this.state.showPopup ?
                         <Popup
-                            text='Too bad you lost! Click ok and try agian.'
+                            text='Too bad, you lost. Click "OK" to play again.'
                             closePopup={this.togglePopup.bind(this)}
+                            score={score}
                         />
                         : null
                     }

@@ -12,6 +12,7 @@
     transition: transform .5s ease;
     overflow:hidden;
     align-self: center;
+    z-index:1;
     }
     
     .card-wrapper > img:hover {
@@ -21,4 +22,5 @@
     -ms-transform: scale(1.025);
     transform: scale(1.025);
     cursor: pointer;
+    z-index:1;
     }

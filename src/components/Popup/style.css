@@ -1,7 +1,7 @@
 .popup {  
     position: fixed;  
     width: 50%;  
-    height: 20%;
+    height: 25%;
     padding: 50px;  
     top: 0;  
     left: 0;  
@@ -13,6 +13,7 @@
     border-radius: 10px;
     border:1px lightgray solid;
     box-shadow: -6px 6px 2px 1px rgba(0, 0, 55, .2);
+    z-index: 7;
   }  
   .popup\_inner {  
     position: absolute;  
@@ -26,10 +27,15 @@
   }
 
   .popup-btn {
-    width: 50%;
-    height: 100%;
+    width: 20%;
+    height: 30px;
     border-radius:10px;
     background-color: lightblue;
+  }
+
+  .loose-score {
+    text-shadow: none;
+    color:green;
   }
 
   
