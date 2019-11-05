@@ -3,10 +3,11 @@ nav {
     grid-template-columns:auto auto auto;
     grid-template-rows:auto;
     background-color:black;
-    opacity:.9;
     width:100%;
     height:100px;
     color:white;
+    background-image: url('https://i.stack.imgur.com/UJur5.png');
+    background-size: cover no repeat;
 }
 
 .score-wrapper {
